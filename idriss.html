@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaafoura Mohamed Idrisse | Professional Portfolio</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif; /* Elegant serif font for old money vibe */
+            margin: 0;
+            padding: 0;
+            background: #F5EDEB;
+            color: #1A1A2E;
+            overflow: hidden;
+            line-height: 1.6;
+            transition: background 0.5s ease;
+            cursor: pointer;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(47, 47, 79, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(224, 205, 161, 0.5);
+            border-bottom: 1px solid #D4A017;
+        }
+        .nav-links a {
+            color: #D4A017;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #8A4A21;
+        }
+        .slider {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            margin-top: 60px;
+        }
+        .slide {
+            min-width: 100%;
+            height: calc(100vh - 60px);
+            padding: 40px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #FFFFFF;
+            box-shadow: 0 4px 12px rgba(224, 205, 161, 0.3);
+            border: 1px solid #E0CDA1;
+            animation: fadeIn 1s ease-in;
+        }
+        h1 {
+            color: #2F2F4F;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic; /* Adds a touch of elegance */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h2 {
+            color: #2F2F4F;
+            font-size: 1.8em;
+            border-bottom: 3px solid #D4A017;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+        h2:hover {
+            color: #8A4A21;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 800px;
+            text-align: left;
+        }
+        ul li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        ul li::before {
+            content: "►";
+            color: #D4A017;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+        ul li:hover::before {
+            color: #8A4A21;
+        }
+        a {
+            color: #D4A017;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+        a:hover {
+            color: #8A4A21;
+            text-decoration: underline;
+        }
+        .emoji {
+            font-size: 1.3em;
+            vertical-align: middle;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1A1A2E;
+                color: #E0CDA1;
+            }
+            .navbar { background: rgba(47, 47, 79, 0.95); }
+            .nav-links a { color: #E0CDA1; }
+            .nav-links a:hover { color: #8A4A21; }
+            .slide { background: #2F2F4F; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); border: 1px solid #8A4A21; }
+            h1, h2 { color: #D4A017; }
+            h2:hover { color: #8A4A21; }
+            ul li::before { color: #D4A017; }
+            ul li:hover::before { color: #8A4A21; }
+            a { color: #D4A017; }
+            a:hover { color: #8A4A21; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#toolbox">Toolbox</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="#mission">Mission</a>
+        </div>
+    </div>
+    <div class="slider" id="slider">
+        <div class="slide">
+            <h1>🌐 Jaafoura Mohamed Idrisse | Professional Portfolio</h1>
+            <p>Welcome to my professional portfolio. I am Jaafoura Mohamed Idrisse, an Embedded Systems Developer based in Monastir, Tunisia. With a strong dedication to excellence, I specialize in developing innovative solutions that bridge hardware and software, focusing on embedded systems and cross-platform applications. I am committed to advancing technology through open-source collaboration.</p>
+        </div>
+        <div class="slide">
+            <h2>🛠️ Technical Toolbox</h2>
+            <p>Below are the technologies and tools I utilize to deliver high-quality, scalable solutions:</p>
+            <ul>
+                <li><strong>Languages:</strong>
+                    <ul>
+                        <li>Embedded C ⚙️</li>
+                        <li>C++ 💻</li>
+                        <li>JavaScript 🌐</li>
+                        <li>Python 🐍</li>
+                    </ul>
+                </li>
+                <li><strong>Frameworks:</strong>
+                    <ul>
+                        <li>Flutter for seamless user interfaces ✨</li>
+                    </ul>
+                </li>
+                <li><strong>Tools & Platforms:</strong>
+                    <ul>
+                        <li>Git 🦸</li>
+                        <li>VSCode 💻</li>
+                        <li>Arduino IDE 🛠️</li>
+                    </ul>
+                </li>
+                <li><strong>Hardware:</strong>
+                    <ul>
+                        <li>LattePanda 3 Delta</li>
+                        <li>ESP32</li>
+                        <li>Arduino Uno</li>
+                    </ul>
+                </li>
+                <li><strong>Domains:</strong>
+                    <ul>
+                        <li>Embedded Systems</li>
+                        <li>Real-Time Systems</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h2>👨‍💻 About Me</h2>
+            <ul>
+                <li><strong>Profession:</strong> Embedded Systems Developer</li>
+                <li><strong>Location:</strong> Monastir, Tunisia 🌍</li>
+                <li><strong>Education:</strong> Bachelor’s in Embedded Systems, Higher Institute of Computer Science and Mathematics of Monastir (Graduated June 2025) 🎓</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h2>🚀 Featured Projects</h2>
+            <p>Explore select projects that demonstrate my expertise in embedded systems and software development:</p>
+            <ul>
+                <li><strong>Scooter Dashboard</strong><br>
+                    A professional Flutter-based dashboard for scooters, providing real-time data (speed, battery, turn signals) on a LattePanda 3 Delta with a 7-inch eDP display.<br>
+                    <em>Tech Stack:</em> Flutter, Embedded C, LattePanda<br>
+                    <em>Highlight:</em> Integrates a sophisticated UI with embedded hardware for an optimized user experience. 🛵</li>
+            </ul>
+            <p>👉 <a href="https://github.com/JaafouraMohamedIdrisse?tab=repositories">Explore my repositories</a> and consider contributing to enhance these projects.</p>
+        </div>
+        <div class="slide">
+            <h2>📬 Get in Touch</h2>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:idrissejaaf@gmail.com">idrissejaaf@gmail.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammed-idrisse-jaafoura-3ba884323">Mohammed Idrisse Jaafoura</a></li>
+            </ul>
+            <p>I welcome opportunities to discuss potential projects, collaborations, or professional engagements. Please feel free to contact me.</p>
+        </div>
+        <div class="slide">
+            <h2>🎯 My Mission</h2>
+            <ul>
+                <li>🌍 Contribute meaningful code to open-source embedded systems initiatives</li>
+                <li>⚙️ Develop cutting-edge, efficient solutions for smart devices and connected ecosystems</li>
+                <li>📚 Pursue advanced expertise in RTOS, edge computing, and embedded AI through graduate studies</li>
+                <li>🤝 Partner with global developers to influence the future of technological innovation</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <p>Thank you for visiting my portfolio. I am eager to share my work and engage with the technology community. I invite you to reach out for collaboration, to exchange ideas, or to discuss embedded systems in depth.</p>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function goToSlide(index) {
+            currentSlide = index;
+            const offset = -index * 100;
+            slider.style.transform = `translateX(${offset}vw)`;
+        }
+
+        // Advance slide on mouse click
+        document.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            goToSlide(currentSlide);
+        });
+
+        // Optional: Allow navigation with arrow keys
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % slides.length;
+                goToSlide(currentSlide);
+            } else if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                goToSlide(currentSlide);
+            }
+        });
+    </script>
+</body>
+</html>
