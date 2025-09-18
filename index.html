@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu extensible simple</title>
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Menu */
+    .menu {
+      width: 220px;
+      background: #2c3e50;
+      color: white;
+      height: 100vh;
+      padding: 10px;
+    }
+
+    .menu h3 {
+      margin: 0;
+      padding: 12px;
+      cursor: pointer;
+      background: #34495e;
+    }
+
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: none; /* Masqu� par d�faut */
+    }
+
+    .menu li {
+      padding: 10px;
+      background: #3d566e;
+      margin-top: 2px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    .menu li a:hover {
+      background: #16a085;
+    }
+
+    /* Contenu */
+    .content {
+      flex: 1;
+      padding: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu -->
+  <div class="menu">
+    <h3 onclick="toggleMenu()">Equipe Dev Polytech</h3>
+    <ul id="menuItems">
+      <li><a href="rabeb.html" target="contentFrame">Rabeb Hamza</a></li>
+      <li><a href="aya.html" target="contentFrame">Aya Boussaid</a></li>
+      <li><a href="isra.html" target="contentFrame">Isra Tlili</a></li>
+      <li><a href="bassemarbi.html" target="contentFrame">Bassem Arbi</a></li>
+      <li><a href="mariem.html" target="contentFrame">Mariem Hamad</a></li>
+      <li><a href="chiheb.html" target="contentFrame">Chiheb Zamouri</a></li>
+      <li><a href="hamza.html" target="contentFrame">Hamza BelHaj</a></li>
+      <li><a href="yassinhamed.html" target="contentFrame">Yassin Hamed</a></li>
+      <li><a href="ahmed.html" target="contentFrame">Ahmed Gatri</a></li>
+      <li><a href="idriss.html" target="contentFrame">Med Idriss Jaafoura</a></li>
+      <li><a href="farah.html" target="contentFrame">Farah Chaabane</a></li>
+      <li><a href="chahine.html" target="contentFrame">Chahine Mansouri</a></li>
+      <li><a href="bacem.html" target="contentFrame">Bacem Touil</a></li>
+      <li><a href="ayet.html" target="contentFrame">Ayet Karchoud</a></li>
+      <li><a href="yassinabidi.html" target="contentFrame">Yassin Abidi</a></li>
+      <li><a href="leila.html" target="contentFrame">Leila Barket</a></li>
+      <li><a href="ameni.html" target="contentFrame">Ameni Rais</a></li>
+      <li><a href="firas.html" target="contentFrame">Firas Sonnara</a></li>
+    </ul>
+  </div>
+
+  <!-- Zone de contenu -->
+  <div class="content">
+    <iframe name="contentFrame" src="page1.html"></iframe>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuItems");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
