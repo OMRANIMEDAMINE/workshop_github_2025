@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Yassin Hamed — Portfolio</title>
+<meta name="description" content="Portfolio de Yassin Hamed — Développeur | AI & Web | Tunisia" />
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<style>
+  /* ===== Reset & base ===== */
+  :root{
+    --bg: #0f1724;
+    --card: rgba(255,255,255,0.04);
+    --muted: rgba(255,255,255,0.75);
+    --accent1: #ff6b6b; /* warm pink */
+    --accent2: #ffd93d; /* yellow */
+    --accent3: #6be5ff; /* cyan */
+    --glass: rgba(255,255,255,0.06);
+    --glass-2: rgba(255,255,255,0.03);
+    --radius: 14px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(107,229,255,0.06), transparent),
+                radial-gradient(1000px 500px at 90% 90%, rgba(255,107,107,0.04), transparent),
+                var(--bg);
+    color: #e6eef8;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.45;
+    padding:32px;
+  }
+
+  /* ===== Container ===== */
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 380px;
+    gap:28px;
+    align-items:start;
+  }
+
+  /* ===== Left: main content ===== */
+  main{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border-radius: var(--radius);
+    padding:28px;
+    box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  header.hero{
+    display:flex;
+    gap:20px;
+    align-items:center;
+  }
+  .hero-left{
+    flex:1;
+  }
+  h1{
+    font-size:28px;
+    margin-bottom:8px;
+    letter-spacing:-0.4px;
+  }
+  .tagline{
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  .cta-row{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    text-decoration:none;
+    color: #081224;
+    background: linear-gradient(90deg,var(--accent1),var(--accent3));
+    box-shadow: 0 8px 24px rgba(99,102,241,0.08);
+    transition:transform .14s ease, box-shadow .14s ease;
+  }
+  .btn.secondary{
+    color: #e9f5ff;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: none;
+  }
+  .btn:hover{ transform: translateY(-4px) }
+
+  .skills{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:16px;
+  }
+  .chip{
+    background:var(--glass);
+    padding:8px 10px;
+    border-radius:999px;
+    font-size:13px;
+    color:var(--muted);
+    border: 1px solid rgba(255,255,255,0.02);
+  }
+
+  /* ===== Right: side card ===== */
+  aside.card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: var(--radius);
+    padding:20px;
+    position:sticky;
+    top:32px;
+    height:fit-content;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  .profile{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    margin-bottom:12px;
+  }
+  .avatar{
+    width:84px;
+    height:84px;
+    border-radius:18px;
+    overflow:hidden;
+    flex-shrink:0;
+    background: linear-gradient(135deg,var(--accent2),var(--accent3));
+    display:inline-grid;
+    place-items:center;
+    border: 3px solid rgba(255,255,255,0.05);
+  }
+  .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  .meta h3{ font-size:18px; margin-bottom:4px }
+  .meta p{ color:var(--muted); font-size:13px }
+
+  .contact-list{ margin-top:12px; display:grid; gap:8px; }
+  .contact-item{
+    display:flex; align-items:center; gap:10px; padding:10px; border-radius:10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    border:1px solid rgba(255,255,255,0.02);
+    font-size:14px;
+  }
+  .contact-item a{ color:var(--muted); text-decoration:none }
+
+  .progress{
+    margin-top:12px;
+    display:grid; gap:10px;
+  }
+  .progress .p{
+    display:flex; justify-content:space-between; font-size:13px; color:var(--muted);
+  }
+  .bar{
+    height:10px; background:var(--glass-2); border-radius:999px; overflow:hidden;
+  }
+  .bar > i{ display:block; height:100%; width:40%; background: linear-gradient(90deg,var(--accent1),var(--accent3)); }
+
+  /* ===== Projects grid ===== */
+  .projects{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap:12px;
+  }
+  .proj{
+    background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+    padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.02);
+  }
+  .proj h4{ margin-bottom:6px }
+  .proj p{ color:var(--muted); font-size:13px }
+
+  /* ===== Footer / contact form ===== */
+  .contact-section{
+    margin-top:20px;
+    padding:16px;
+    border-radius:12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    border:1px solid rgba(255,255,255,0.02);
+  }
+  label{ font-size:13px; display:block; margin-bottom:6px; color:var(--muted) }
+  input[type="text"], input[type="email"], textarea{
+    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.02); color: #eaf6ff; font-size:14px;
+  }
+  textarea{ min-height:96px; resize:vertical; }
+  .send{ margin-top:10px; display:inline-block; }
+
+  /* ===== Responsive ===== */
+  @media (max-width:980px){
+    .wrap{ grid-template-columns: 1fr; padding:0 12px; }
+    aside.card{ position:relative; top:0 }
+  }
+
+  /* small interactive touches */
+  .highlight{
+    display:inline-block;
+    background: linear-gradient(90deg,var(--accent3),var(--accent1));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    font-weight:700;
+  }
+
+  footer{ margin-top:20px; color:var(--muted); font-size:13px; text-align:center }
+  a.inline-link{ color:inherit; text-decoration:underline; text-underline-offset:4px }
+</style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <main>
+      <header class="hero" aria-label="Présentation">
+        <div class="hero-left">
+          <h1>Salut, je suis <span class="highlight">Yassin Hamed</span> — Développeur & Ingénieur logiciel</h1>
+          <p class="tagline">Je conçois des applications web modernes, des systèmes temps réel et des solutions d'IA. Basé en Tunisie 🇹🇳.</p>
+
+          <div class="cta-row">
+            <a class="btn" href="#contact" title="Me contacter">📧 Contactez-moi</a>
+            <a class="btn secondary" href="#projets" title="Voir mes projets">✨ Mes projets</a>
+            <a class="btn secondary" href="https://github.com/yassinhamed" target="_blank" rel="noopener" title="Voir sur GitHub">GitHub</a>
+          </div>
+
+          <div class="skills" aria-hidden="false" style="margin-top:18px">
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Python</span>
+            <span class="chip">Docker</span>
+            <span class="chip">WebSockets</span>
+            <span class="chip">Machine Learning</span>
+          </div>
+        </div>
+
+        <!-- decorative card on top right (small) for short bio -->
+        <div class="hero-right" aria-hidden="true" style="min-width:220px; text-align:right">
+          <div style="font-size:12px; color:var(--muted); margin-bottom:8px">Disponible pour projets freelance & collaborations</div>
+          <div style="font-size:12px; color:var(--muted)">Email: <strong style="color:#fff">yassinhamed456@gmail.com</strong></div>
+        </div>
+      </header>
+
+      <section id="a-propos" style="margin-top:22px">
+        <h2 style="font-size:18px; margin-bottom:8px">À propos</h2>
+        <div style="color:var(--muted)">
+          Ingénieur logiciel avec expérience en <strong>développement web full-stack</strong>, systèmes embarqués (robotique) et intégration d'algorithmes ML. J'aime transformer des idées complexes en produits simples, fiables et esthétiques.
+        </div>
+      </section>
+
+      <section id="projets" style="margin-top:18px">
+        <h2 style="font-size:18px; margin-bottom:10px">Projets récents</h2>
+        <div class="projects" aria-live="polite">
+          <article class="proj">
+            <h4>CyberLearn</h4>
+            <p>Plateforme e-learning professionnelle (Django + React) — gestion de cours, quizz, et analytics.</p>
+          </article>
+          <article class="proj">
+            <h4>Food Delivery</h4>
+      <p>Application web pour commander et livrer des repas — backend Node.js + MongoDB, frontend React.</p>
+    </article>
+      <article class="proj">
+      <h4>Autonomous Drone</h4>
+      <p>Drone autonome équipé de capteurs pour la navigation intelligente, avec algorithmes de contrôle en temps réel.</p>
+    </article>
+          <article class="proj">
+            <h4>Robot suiveur de ligne</h4>
+            <p>Robot autonome avec capteurs QTR-8, pilotage PID et architecture modulaire.</p>
+          </article>
+
+          <article class="proj">
+            <h4>Messaging temps réel</h4>
+            <p>Système de chat en temps réel basé sur WebSockets et implémentation serveur en PHP.</p>
+          </article>
+
+          <article class="proj">
+            <h4>Dashboard DataViz</h4>
+            <p>Tableaux de bord interactifs pour l'exploration et la visualisation de datasets.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" style="margin-top:18px">
+        <h2 style="font-size:18px; margin-bottom:8px">Compétences & Focus</h2>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px">
+          <div style="flex:1; min-width:200px; background:var(--card); padding:12px; border-radius:10px">
+            <strong>Backend</strong>
+            <p style="color:var(--muted); margin-top:6px">Node.js, Express, Django, REST, WebSockets, SQL/NoSQL</p>
+          </div>
+          <div style="flex:1; min-width:200px; background:var(--card); padding:12px; border-radius:10px">
+            <strong>Frontend</strong>
+            <p style="color:var(--muted); margin-top:6px">React, HTML5, CSS3, animations accessibles</p>
+          </div>
+          <div style="flex:1; min-width:200px; background:var(--card); padding:12px; border-radius:10px">
+            <strong>ML & Data</strong>
+            <p style="color:var(--muted); margin-top:6px">Pandas, scikit-learn, prototypage & visualisation</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-label="Contact">
+        <h2 style="font-size:17px; margin-bottom:8px">Contact</h2>
+
+        <form id="contactForm" onsubmit="return false;">
+          <label for="name">Ton nom</label>
+          <input id="name" type="text" placeholder="Ex: Ahmed" required>
+
+          <label for="email" style="margin-top:8px">Ton e-mail</label>
+          <input id="email" type="email" placeholder="exemple@mail.com" required>
+
+          <label for="message" style="margin-top:8px">Message</label>
+          <textarea id="message" placeholder="Écris ton message..." required></textarea>
+
+          <div style="display:flex; gap:10px; align-items:center; margin-top:10px">
+            <button class="btn send" id="sendBtn" type="button">✉️ Envoyer</button>
+            <div id="sendStatus" style="color:var(--muted); font-size:13px"></div>
+          </div>
+        </form>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Yassin Hamed — Built with ❤️ — <a class="inline-link" href="https://www.linkedin.com/in/yassin-hamed-197b15235/" target="_blank" rel="noopener">LinkedIn</a>
+      </footer>
+    </main>
+
+    <aside class="card" aria-label="Profil">
+      <div class="profile">
+        <div class="avatar" title="Photo de profil">
+          <!-- Remplacez 'profile.jpg' par le nom de votre image (format jpg/png). -->
+          <img src="profile.png" alt="Photo de profil de Yassin Hamed" id="profileImg" onerror="this.style.objectPosition='center';">
+        </div>
+        <div class="meta">
+          <h3>Yassin Hamed</h3>
+          <p>Software Engineer — Tunisia</p>
+        </div>
+      </div>
+
+      <div class="contact-list" aria-hidden="false">
+        <div class="contact-item"><strong>📧</strong> <a href="mailto:yassinhamed456@gmail.com">yassinhamed456@gmail.com</a></div>
+        <div class="contact-item"><strong>🔗</strong> <a href="https://www.linkedin.com/in/yassin-hamed-197b15235/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div class="contact-item"><strong>🌐</strong> <a href="https://github.com/yassinhamed" target="_blank" rel="noopener">github.com/yassinhamed</a></div>
+      </div>
+
+      <div class="progress" aria-hidden="false">
+        <div class="p"><span>Frontend</span><span>85%</span></div>
+        <div class="bar"><i style="width:85%"></i></div>
+
+        <div class="p"><span>Backend</span><span>80%</span></div>
+        <div class="bar"><i style="width:80%"></i></div>
+
+        <div class="p"><span>Embedded / Robotique</span><span>70%</span></div>
+        <div class="bar"><i style="width:70%"></i></div>
+      </div>
+    </aside>
+  </div>
+
+<script>
+  // small JS for interactivity
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // contact form: opens mail client with prefilled message (simple & portable)
+  document.getElementById('sendBtn').addEventListener('click', function(){
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    const status = document.getElementById('sendStatus');
+
+    if(!name || !email || !msg){
+      status.textContent = 'Remplis tous les champs svp.';
+      return;
+    }
+
+    // build mailto
+    const subject = encodeURIComponent('Contact portfolio — ' + name);
+    const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${msg}`);
+    const mailto = `mailto:yassinhamed456@gmail.com?subject=${subject}&body=${body}`;
+
+    // Try to open mail client
+    status.textContent = 'Ouverture du client mail...';
+    window.location.href = mailto;
+    setTimeout(()=>{ status.textContent = 'Si rien ne s\'est ouvert, envoie un mail directement à yassinhamed456@gmail.com'; }, 1500);
+  });
+
+  // small enhancement: if no profile.jpg, display initials
+  const img = document.getElementById('profileImg');
+  img.addEventListener('error', function(){
+    // create initials fallback
+    const avatar = this.parentElement;
+    avatar.innerHTML = '<div style="font-weight:800; font-size:28px; color:#071226; background: linear-gradient(90deg,var(--accent2),var(--accent3)); width:100%; height:100%; display:grid; place-items:center; border-radius:18px;">YH</div>';
+  });
+</script>
+</body>
+</html>
