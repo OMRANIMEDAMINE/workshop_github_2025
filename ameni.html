@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amenirais — GitHub Profile</title>
+  <meta name="description" content="Amenirais — Passionate about building, learning and sharing knowledge through code." />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#0f1724;
+      --muted:#9aa7bf;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.03);
+      --gap:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#071124 0%, #071226 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:36px 18px;
+    }
+
+    .container{
+      width:100%;
+      max-width:880px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+
+    header{
+      display:flex;
+      gap:var(--gap);
+      align-items:center;
+      margin-bottom:8px;
+    }
+    .avatar{
+      width:86px;
+      height:86px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#1f2937,#111827);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:28px;
+      color: #dbeafe;
+      border:1px solid rgba(255,255,255,0.03);
+      flex:0 0 86px;
+    }
+    h1{margin:0;font-size:22px}
+    .sub{color:var(--muted);margin-top:6px;font-size:14px}
+
+    hr.sep{border:0;height:1px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04)); margin:18px 0;border-radius:2px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+    }
+
+    @media(min-width:880px){
+      .grid{grid-template-columns: 1fr 340px;}
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:16px;
+      border:1px solid rgba(255,255,255,0.02);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.01);
+    }
+
+    .list{padding-left:16px;margin:10px 0 0 0;color:var(--muted)}
+    .list li{margin:8px 0;line-height:1.45}
+
+    .badges img{height:30px;margin:6px 6px 6px 0;vertical-align:middle;border-radius:6px}
+
+    .stats img{width:100%;max-width:100%;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+    .quote{font-style:italic;color:var(--muted);margin-top:12px}
+
+    .contact a{
+      color:#dbeafe;
+      text-decoration:none;
+      border-bottom:1px dashed rgba(219,234,254,0.06);
+    }
+
+    footer{margin-top:14px;color:var(--muted);font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <div class="avatar">AR</div>
+      <div>
+        <h1>Hi there 👋</h1>
+        <div class="sub">I'm <strong>Amenirais</strong>, welcome to my GitHub profile! 💡 Passionate about building, learning, and sharing knowledge through code.</div>
+      </div>
+    </header>
+
+    <hr class="sep" />
+
+    <div class="grid">
+      <!-- Left column -->
+      <section class="card">
+        <h2 style="margin:0 0 8px 0">🚀 About Me</h2>
+        <ul class="list">
+          <li>🔭 I’m currently working on exciting projects to expand my portfolio</li>
+          <li>🌱 I’m learning and experimenting with modern tools & frameworks</li>
+          <li>👯 I’m open to collaborating on interesting projects</li>
+          <li>💬 Ask me about anything tech-related — I love to discuss and brainstorm</li>
+          <li class="contact">📫 Reach me here:
+            <br/>
+            <a href="mailto:amenirais207@gmail.com">amenirais207@gmail.com</a> ·
+            <a href="https://github.com/amenirais207-pixel" target="_blank" rel="noopener">amenirais207-pixel (GitHub)</a>
+          </li>
+        </ul>
+
+        <hr style="margin:16px 0;border:0;height:1px;background:rgba(255,255,255,0.03)" />
+
+        <h3 style="margin:0 0 8px 0">🛠️ Tech & Tools</h3>
+        <div class="badges" aria-hidden="true">
+          <!-- These are the shields used in your markdown; they load from shields.io -->
+          <img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white" />
+          <img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black" />
+          <img alt="React" src="https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black" />
+          <img alt="Git" src="https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white" />
+          <img alt="VS Code" src="https://img.shields.io/badge/-VS%20Code-007ACC?logo=visualstudiocode&logoColor=white" />
+        </div>
+
+        <p class="quote">✨ <em>“Code is like art — it’s best when it’s shared.”</em></p>
+      </section>
+
+      <!-- Right column -->
+      <aside class="card">
+        <h3 style="margin:0 0 12px 0">📊 GitHub Stats</h3>
+
+        <div class="stats" role="img" aria-label="Github stats images">
+          <img alt="Amenirais's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=amenirais207-pixel&show_icons=true&theme=radical" />
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="stats">
+          <img alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=amenirais207-pixel&layout=compact&theme=radical" />
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div style="font-size:13px;color:var(--muted);margin-top:8px">
+          Tip: these images are generated by <code>github-readme-stats</code>. If you want a different theme or layout, replace the URLs.
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div style="margin-top:18px">Made with ❤️ by <strong>Amenirais</strong></div>
+    </footer>
+  </main>
+</body>
+</html>
