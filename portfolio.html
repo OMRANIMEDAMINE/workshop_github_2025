@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ahmed Gatri — Portfolio</title>
+  <meta name="description" content="Portfolio of Ahmed Gatri — Electrical Engineering student, electronics, Arduino, robotics.">
+  <style>
+    :root{
+      --bg:#0f1020;
+      --card:#121225;
+      --muted:#9aa3c7;
+      --accent1:#ff6b6b; /* coral */
+      --accent2:#ffde59; /* yellow */
+      --accent3:#6be4ff; /* cyan */
+      --glass: rgba(255,255,255,0.06);
+      --radius:18px;
+      --fw-regular: 300;
+      --fw-medium: 500;
+      --fw-bold: 700;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e8eefc;background:linear-gradient(180deg,var(--bg),#071024 80%);-webkit-font-smoothing:antialiased}
+
+    header{position:sticky;top:16px;z-index:40;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(6px);}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent3));display:flex;align-items:center;justify-content:center;color:#081325;font-weight:800;font-size:18px;box-shadow:0 6px 22px rgba(107,228,255,0.08)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:500}
+    nav a:hover{color:white}
+
+    main{max-width:1100px;margin:36px auto;padding:28px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:var(--radius);box-shadow:0 8px 40px rgba(2,6,23,0.6)}
+
+    .intro h1{margin:0;font-size:34px;letter-spacing:-0.6px}
+    .intro p{color:var(--muted);line-height:1.6}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent3));color:#041428;box-shadow:0 8px 30px rgba(255,107,107,0.12)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .stats{display:flex;gap:12px;margin-top:18px}
+    .stat{background:var(--glass);padding:10px 14px;border-radius:12px;text-align:center}
+    .stat strong{display:block}
+
+    .profile-card{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+    .avatar{width:200px;height:200px;border-radius:26px;background:linear-gradient(180deg,var(--accent2),var(--accent3));display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:#041428}
+    .links{display:flex;gap:12px;margin-top:6px}
+    .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03);font-weight:600}
+
+    /* Projects */
+    section{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{padding:14px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));transition:transform .28s, box-shadow .28s;cursor:default}
+    .project:hover{transform:translateY(-8px);box-shadow:0 18px 60px rgba(6,10,30,0.6)}
+    .project h3{margin:0}
+    .project p{color:var(--muted);font-size:14px}
+    .tags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03)}
+
+    /* Skills */
+    .skills{display:flex;gap:10px;flex-wrap:wrap}
+    .skill{padding:8px 12px;border-radius:12px;background:linear-gradient(90deg,var(--accent3),var(--accent1));color:#041428;font-weight:700}
+
+    /* Contact */
+    .contact-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form input, form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#e8eefc}
+    form button{margin-top:10px}
+
+    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)} .avatar{width:160px;height:160px}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr} header{padding:12px} .contact-row{grid-template-columns:1fr}}
+
+    /* subtle animated gradient background */
+    .bg-shape{position:fixed;right:-10%;top:-10%;width:520px;height:520px;border-radius:50%;background:linear-gradient(135deg,var(--accent1),var(--accent2),var(--accent3));filter:blur(80px);opacity:0.16;transform:rotate(20deg);z-index:0}
+
+    /* modal */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);visibility:hidden;opacity:0;transition:opacity .18s, visibility .18s}
+    .modal.show{visibility:visible;opacity:1}
+    .modal-card{background:linear-gradient(180deg,#071026,#0e1830);padding:22px;border-radius:16px;max-width:720px;width:94%}
+    .close{background:transparent;border:0;color:var(--muted);font-weight:700;float:right}
+  </style>
+</head>
+<body>
+  <div class="bg-shape" aria-hidden></div>
+  <header>
+    <div class="brand">
+      <div class="logo">AG</div>
+      <div>
+        <div style="font-weight:800">Ahmed Gatri</div>
+        <div style="font-size:12px;color:var(--muted)">Electrical Engineering • Arduino • Robotics</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="panel intro">
+        <h1>Hi, I'm <span style="background:linear-gradient(90deg,var(--accent1),var(--accent3));-webkit-background-clip:text;color:transparent;font-weight:900">Ahmed Gatri</span></h1>
+        <p>Electrical Engineering student at Polytech Monastir. I build embedded systems, Arduino projects, and small robots. I love clean design, practical circuits, and simulations.</p>
+
+        <div class="cta">
+          <button class="btn btn-primary" onclick="location.href='#projects'">View Projects</button>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/ahmed-gatri-0406b4339/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-outline" href="https://github.com/gatriahmed7-cell" target="_blank" rel="noopener">GitHub</a>
+        </div>
+
+        <div class="stats" aria-hidden>
+          <div class="stat"><strong>12+</strong><span style="font-size:12px;color:var(--muted)">Projects</span></div>
+          <div class="stat"><strong>3+</strong><span style="font-size:12px;color:var(--muted)">Years practice</span></div>
+          <div class="stat"><strong>100+</strong><span style="font-size:12px;color:var(--muted)">Commits</span></div>
+        </div>
+      </div>
+
+      <aside class="panel profile-card">
+        <div class="avatar">AG</div>
+        <div style="font-weight:700">Ahmed Gatri</div>
+        <div style="color:var(--muted);font-size:14px">Electrical Engineering • Tunisia</div>
+        <div class="links">
+          <a class="chip" href="https://www.linkedin.com/in/ahmed-gatri-0406b4339/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="chip" href="https://github.com/gatriahmed7-cell" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div style="width:100%;margin-top:10px;text-align:left;color:var(--muted);font-size:14px">Quick bio: Embedded systems enthusiast. Comfortable with Arduino, Proteus simulations, and beginner SolidWorks. Focused on reliable, safe designs.</div>
+      </aside>
+    </section>
+
+    <section id="projects" class="panel">
+      <h2>Projects</h2>
+      <div class="grid" style="margin-top:12px">
+        <article class="project">
+          <h3>Automatic Irrigation System</h3>
+          <p>Arduino-based system using DHT11, RTC DS3231, and motor control to automate watering based on humidity readings.</p>
+          <div class="tags"><span class="tag">Arduino</span><span class="tag">DHT11</span><span class="tag">RTC</span></div>
+          <div style="margin-top:12px"><button class="btn btn-outline" onclick="openModal('Irrigation','Full project details: sensors, wiring, Proteus simulation, and Arduino code.')">Read more</button></div>
+        </article>
+
+        <article class="project">
+          <h3>Mini Train Model</h3>
+          <p>Reduced scale train with ultrasonic detection, speed control, and safety measures inspired by Carthageland passage.</p>
+          <div class="tags"><span class="tag">Ultrasonic</span><span class="tag">Motor Control</span><span class="tag">Proteus</span></div>
+          <div style="margin-top:12px"><button class="btn btn-outline" onclick="openModal('Mini Train','Includes schematics, sensors placement, and Proteus simulation files.')">Read more</button></div>
+        </article>
+
+        <article class="project">
+          <h3>NE555 Blinker & Circuits</h3>
+          <p>Classic NE555 timer projects and experiments with capacitors and signal timing for LED indicators and alarms.</p>
+          <div class="tags"><span class="tag">NE555</span><span class="tag">Electronics</span></div>
+          <div style="margin-top:12px"><button class="btn btn-outline" onclick="openModal('NE555 Projects','Circuit diagrams, component list, and breadboard photos.')">Read more</button></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills" class="panel">
+      <h2>Skills</h2>
+      <div style="margin-top:12px" class="skills">
+        <div class="skill">Arduino</div>
+        <div class="skill">C / C++</div>
+        <div class="skill">Proteus</div>
+        <div class="skill">SolidWorks (basic)</div>
+        <div class="skill">Circuit Design</div>
+        <div class="skill">Embedded Systems</div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel">
+      <h2>Contact</h2>
+      <p style="color:var(--muted)">Want to collaborate or ask about a project? Send me a message.</p>
+      <form onsubmit="submitForm(event)" style="margin-top:12px">
+        <div class="contact-row">
+          <input id="name" type="text" placeholder="Your name" required>
+          <input id="email" type="email" placeholder="Your email" required>
+        </div>
+        <textarea id="message" rows="5" placeholder="Message" required style="margin-top:10px"></textarea>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <div>Made with ❤️ by <strong>Ahmed Gatri</strong> — <a href="https://github.com/gatriahmed7-cell" target="_blank" rel="noopener">@gatriahmed7-cell</a></div>
+    </footer>
+  </main>
+
+  <div id="modal" class="modal" role="dialog" aria-hidden>
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">✕</button>
+      <div id="modal-title" style="font-size:20px;font-weight:800;margin-bottom:8px"></div>
+      <div id="modal-body" style="color:var(--muted);line-height:1.6"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title,body){document.getElementById('modal-title').textContent=title;document.getElementById('modal-body').textContent=body;document.getElementById('modal').classList.add('show');document.getElementById('modal').setAttribute('aria-hidden','false')}
+    function closeModal(){document.getElementById('modal').classList.remove('show');document.getElementById('modal').setAttribute('aria-hidden','true')}
+
+    function submitForm(e){e.preventDefault();const name=document.getElementById('name').value;const email=document.getElementById('email').value;const message=document.getElementById('message').value;if(!name||!email||!message){alert('Please fill all fields');return} // simple client validation
+      // Here you can wire to an email service or GitHub actions; for demo we show a success modal
+      openModal('Message sent','Thanks '+name+'! I will contact you soon via '+email+'. (This is a demo — implement backend to actually send messages)');
+      e.target.reset();
+    }
+
+    // smooth in-page scroll for nav links
+    document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const id=a.getAttribute('href');document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'})}))
+  </script>
+</body>
+</html>
