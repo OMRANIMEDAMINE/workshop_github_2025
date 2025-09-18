@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rabeb Hamza — Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #0d6efd;
+      --light-bg: #f8f9fa;
+      --card-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--light-bg);
+      color: #333;
+    }
+    .hero {
+      background: linear-gradient(120deg, rgba(13,110,253,0.08), rgba(13,110,253,0.02));
+      padding: 5rem 0;
+      border-radius: 1rem;
+      box-shadow: var(--card-shadow);
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tech-badge {
+      border-radius: 999px;
+      padding: .4rem .9rem;
+      background: #fff;
+      border: 1px solid #dee2e6;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .9rem;
+      margin-bottom: .4rem;
+      transition: var(--transition);
+    }
+    .tech-badge:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow);
+    }
+    .card-project {
+      border: none;
+      border-radius: 1rem;
+      transition: var(--transition);
+      box-shadow: var(--card-shadow);
+    }
+    .card-project:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(13,110,253,0.15);
+    }
+    section h3 {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--accent);
+      padding-left: .75rem;
+      color: #212529;
+    }
+    footer {
+      background: #fff;
+      padding: 2rem 0;
+      font-size: .9rem;
+      border-top: 1px solid #dee2e6;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      border-radius: .5rem;
+      transition: var(--transition);
+    }
+    .btn-primary:hover {
+      background: #0b5ed7;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(13,110,253,0.3);
+    }
+    .btn-outline-primary {
+      border-radius: .5rem;
+      transition: var(--transition);
+    }
+    .btn-outline-primary:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    @media (max-width: 767px) {
+      .hero { padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+      <a class="navbar-brand fw-bold accent" href="#">Rabeb Hamza</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero my-4">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <h1 class="display-6 fw-bold">Bonjour ! Je suis <span>Rabeb Hamza</span></h1>
+          <p class="lead mb-3">Étudiante en deuxième année du cycle ingénieur à l’Université Polytech Monastir 🎓. Passionnée par le développement web, je conçois et développe des applications modernes et performantes.</p>
+          <div class="mb-3">
+            <span class="tech-badge">Java ☕</span>
+            <span class="tech-badge">JavaScript 🌐</span>
+            <span class="tech-badge">Angular ⚡</span>
+            <span class="tech-badge">Spring Boot 🌱</span>
+          </div>
+          <a href="#projects" class="btn btn-primary me-2">Voir mes projets</a>
+          <a href="#contact" class="btn btn-outline-primary">Me contacter</a>
+        </div>
+        <div class="col-md-5 text-center d-none d-md-block">
+          <div class="p-4 bg-white rounded-3 border shadow-sm">
+            <h5 class="mb-2">Étudiante • Développeuse Web</h5>
+            <p class="mb-1"><strong>Université :</strong> Polytech Monastir</p>
+            <p class="mb-1"><strong>Localisation :</strong> Tunisie 🇹🇳</p>
+            <p class="mb-0"><strong>Intérêts :</strong> Développement web, Data & IA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="my-4">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3>À propos de moi</h3>
+          <p>Étudiante en Génie Informatique à l’Université Polytech Monastir, j’ai acquis des expériences en entreprise où j’ai conçu et développé des sites vitrines et interfaces dynamiques. Curieuse, rigoureuse et motivée, je cherche des opportunités pour mettre en pratique mes compétences et continuer à innover.</p>
+          <ul>
+            <li>Curieuse et motivée</li>
+            <li>Rigoureuse dans la qualité du code</li>
+            <li>Souhait de contribuer à des projets open source</li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Compétences</h5>
+          <div class="mb-2"><strong>Langages :</strong> Java, JavaScript, TypeScript, PHP, SQL</div>
+          <div class="mb-2"><strong>Frameworks :</strong> Angular, Spring Boot, Node.js</div>
+          <div class="mb-2"><strong>Outils :</strong> Git, Docker, VSCode</div>
+          <div class="mb-2"><strong>Bases de données :</strong> MySQL</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="my-4">
+      <h3>Projets</h3>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card card-project h-100">
+            <div class="card-body">
+              <h5 class="card-title">Site vitrine industriel</h5>
+              <p class="card-text">Site vitrine réalisé pour une entreprise industrielle (HTML, CSS, PHP, MySQL).</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 small">Tech: HTML • CSS • PHP • MySQL</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-project h-100">
+            <div class="card-body">
+              <h5 class="card-title">Gestion réservations de salles</h5>
+              <p class="card-text">Application de gestion (Angular, Spring Boot, MySQL) avec planning et gestion des conflits.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 small">Tech: Angular • Spring Boot • MySQL</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-project h-100">
+            <div class="card-body">
+              <h5 class="card-title">Site agence de voyage</h5>
+              <p class="card-text">Site web d'agence de voyage avec recherche et réservations (Angular, Node.js).</p>
+            </div>
+            <div class="card-footer bg-transparent border-0 small">Tech: Angular • Node.js</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Contact</h3>
+          <p>Tu peux me contacter pour des collaborations, stages ou questions :</p>
+          <ul class="list-unstyled">
+            <li>📧 <a href="mailto:rabebhamza26@gmail.com">rabebhamza26@gmail.com</a></li>
+            <li>💼 <a href="https://www.linkedin.com/in/rabeb-hamza" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <form class="bg-white p-4 rounded-3 shadow-sm">
+            <div class="mb-3">
+              <label class="form-label">Nom</label>
+              <input class="form-control" placeholder="Ton nom">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">E-mail</label>
+              <input class="form-control" placeholder="Ton e-mail">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Ton message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-muted mt-5">
+    <div class="container">
+      <p>© Rabeb Hamza — Étudiante en Génie Informatique — Université Polytech Monastir</p>
+      <p>Conçu avec ❤️ · <a href="#">GitHub</a></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
